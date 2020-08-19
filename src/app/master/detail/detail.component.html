@@ -1,0 +1,22 @@
+<reusable-toolbar *ngIf="dataLicense"
+    [section]="'Licencias'"
+    [title]="'Subtitulo '"
+    [linkTo]="'otro-componente'"
+    breadcrumbs="{{dataLicense[0].user.surname}} {{dataLicense[0].user.name}}"
+    [textAction]="'Volver'"
+>
+</reusable-toolbar>
+
+<reusable-table *ngIf="dataLicense"
+    [data]="dataLicense"
+    [columns]="columns"
+    [filters]="[]"
+    [defaults]="[]"
+    [paginator]="true"
+    [dataChange]="dataChange"
+    (returnActions)="actionDemo($event)"
+    (returnData)="getDemo($event)"
+    (returnModal)="actionModal($event)">
+</reusable-table>
+
+
